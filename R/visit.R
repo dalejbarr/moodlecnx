@@ -6,5 +6,7 @@
 #' @param id : \code{sub_id} number
 #' @export 
 visit <- function(x, id) {
-  x %>% filter(sub_id == id) %>% pull(fullpath) %>% file.edit()
+  x %>% dplyr::filter(sub_id == id) %>%
+    dplyr::pull(fullpath) %>%
+    file.edit()
 }
